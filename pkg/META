@@ -1,0 +1,9 @@
+description = "Find perceptual pixel differences"
+version = "%%VERSION_NUM%%"
+
+requires = ""
+archive(byte) = "pixeldrift.cma"
+archive(native) = "pixeldrift.cmxa"
+plugin(byte) = "pixeldrift.cma"
+plugin(native) = "pixeldrift.cmxs"
+exists_if = "pixeldrift.cma"

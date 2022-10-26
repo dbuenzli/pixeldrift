@@ -1,0 +1,8 @@
+true : bin_annot, safe_string
+
+<_b0> : -traverse
+<src> : include
+<tool/*> : package(unix cmdliner)
+<tool/*.byte> : custom
+<tool/*.{byte,native}> : linkit(tool/lodepng_stubs.o), \
+                         linkit(tool/vendor/lodepng.o)

@@ -1,0 +1,13 @@
+{0 Pixeldrift {%html: <span class="version">%%VERSION%%</span>%}}
+
+Pixeldrift finds perceptible pixel differences between two equally
+sized sRGB images with an alpha component. It is mostly suitable for
+comparing synthetic images: diagrams, user interface screenshots,
+rendering algorithms outputs, etc.
+
+{!modules: Pixeldrift}
+
+{1:todo TODO}
+
+- Make a decision about linear vs non-linear blending.
+- Review the anti-aliasing strategy.

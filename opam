@@ -1,0 +1,40 @@
+opam-version: "2.0"
+name: "pixeldrift"
+synopsis: "Find perceptible pixel differences with OCaml"
+description: """\
+Pixeldrift is an OCaml module to find perceptible pixel differences
+between two equally sized sRGB images with an alpha component. It is
+mostly suitable for comparing synthetic images: diagrams, user
+interface screenshots, rendering algorithms outputs, etc.
+
+Pixeldrift has no dependencies. It is distributed under the ISC
+license. The command line tool depends on [cmdliner].
+
+[cmdliner]: https://erratique.ch/software/cmdliner"""
+maintainer: "Daniel Bünzli <daniel.buenzl i@erratique.ch>"
+authors: "The pixeldrift programmers"
+license: "ISC"
+tags: ["graphics" "color" "testing" "org:erratique"]
+homepage: "https://erratique.ch/software/pixeldrift"
+doc: "https://erratique.ch/software/pixeldrift/doc"
+bug-reports: "https://github.com/dbuenzli/pixeldrift/issues"
+depends: [
+  "ocaml" {>= "4.14.0"}
+  "ocamlfind" {build}
+  "ocamlbuild" {build}
+  "topkg" {build & >= "1.0.3"}
+]
+depopts: ["cmdliner"]
+conflicts: [
+  "cmdliner" {< "1.1.0"}
+]
+build: [
+  "ocaml"
+  "pkg/pkg.ml"
+  "build"
+  "--dev-pkg"
+  "%{dev}%"
+  "--with-cmdliner"
+  "%{cmdliner:installed}%"
+]
+dev-repo: "git+https://erratique.ch/repos/pixeldrift.git"
